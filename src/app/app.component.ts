@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'angular-quickstart';
   isNative: boolean | undefined;
   platform: string | undefined;
+  origin: string | undefined;
 
   ngOnInit() : void {
     console.log(window.location);
@@ -17,5 +18,7 @@ export class AppComponent {
     console.log(Capacitor.getPlatform());
     this.isNative = Capacitor.isNativePlatform();
     this.platform = Capacitor.getPlatform();
+    this.origin = window.location.origin;
+
   }
 }
